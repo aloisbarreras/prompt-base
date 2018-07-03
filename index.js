@@ -127,7 +127,7 @@ class Prompt extends Emitter {
     this.closed = true;
     this.render();
     this.write('\n' + ansi.cursor.show);
-    this.input.off('keypress', this._keypress);
+    this.input.removeListener('keypress', this._keypress);
     this.rl.close();
     this.emit('close');
   }
